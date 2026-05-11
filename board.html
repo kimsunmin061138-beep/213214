@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메카링크 | 게시판</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="sub-page">
+    <header id="main-header" class="scrolled">
+        <nav class="container">
+            <div class="logo">
+                <a href="index.html">MECHALINK</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#technology">기술</a></li>
+                <li><a href="index.html#industries">산업분야</a></li>
+                <li><a href="board.html">게시판</a></li>
+                <li><a href="index.html#calculator" class="cta-button">ROI 계산기</a></li>
+            </ul>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main style="padding-top: 100px;">
+        <!-- Resources / Board Section -->
+        <section id="resources" class="section-padding">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="subtitle">인사이트 & 커뮤니티</span>
+                    <h2>메카링크 리소스 센터</h2>
+                </div>
+                
+                <div class="board-container">
+                    <div class="board-header">
+                        <div class="board-tabs">
+                            <button class="tab-btn active" data-category="all">전체</button>
+                            <button class="tab-btn" data-category="tech">기술 문서</button>
+                            <button class="tab-btn" data-category="insight">인사이트</button>
+                        </div>
+                        <button id="write-btn" class="primary-btn small">글쓰기</button>
+                    </div>
+                    
+                    <div class="board-list-wrapper">
+                        <table class="board-table">
+                            <thead>
+                                <tr>
+                                    <th>번호</th>
+                                    <th>카테고리</th>
+                                    <th>제목</th>
+                                    <th>작성자</th>
+                                    <th>날짜</th>
+                                </tr>
+                            </thead>
+                            <tbody id="board-body">
+                                <!-- Posts will be injected here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Write Modal -->
+    <div id="write-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>게시글 작성</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <form id="write-form">
+                <div class="form-group">
+                    <label>카테고리</label>
+                    <select id="post-category" required>
+                        <option value="tech">기술 문서</option>
+                        <option value="insight">인사이트</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>제목</label>
+                    <input type="text" id="post-title" placeholder="제목을 입력하세요" required>
+                </div>
+                <div class="form-group">
+                    <label>내용</label>
+                    <textarea id="post-content" rows="10" placeholder="내용을 입력하세요" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>비밀번호</label>
+                    <input type="password" id="post-password" placeholder="비밀번호를 입력하세요" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="primary-btn">저장하기</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- View Modal -->
+    <div id="view-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="view-title">제목</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="post-meta">
+                <span id="view-category" class="tag">카테고리</span>
+                <span id="view-date">날짜</span>
+            </div>
+            <div id="view-content" class="post-body">
+                내용
+            </div>
+            <div class="post-actions" style="margin-top: 3rem; display: flex; gap: 1rem; justify-content: flex-end; border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
+                <button id="edit-btn" class="secondary-btn small">수정</button>
+                <button id="delete-btn" class="secondary-btn small danger">삭제</button>
+            </div>
+        </div>
+    </div>
+
+    <footer id="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <h3>MECHALINK</h3>
+                    <p>인간과 로봇의 협력하는 미래를 만듭니다.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>메뉴</h4>
+                    <ul>
+                        <li><a href="index.html#technology">기술</a></li>
+                        <li><a href="index.html#industries">산업분야</a></li>
+                        <li><a href="board.html">게시판</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>팔로우</h4>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mechalink Inc. 모든 권리 보유.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script type="module" src="board.js"></script>
+</body>
+</html>
